@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useInView } from 'react-intersection-observer';
 import {motion} from 'framer-motion'
 import { Shopify, Spense, Spotify, Walmart } from '../assets';
+import Modal from '../Components/Modal';
+
+
 
 const FirstPage = () => {
+  const [modalOpen, setModalOpen] = useState(false)
 
   const { ref:sectOne, inView:firstSec} = useInView();
   const { ref:sectTwo, inView:secondSec } = useInView();
   const { ref:sectThree, inView:thirdSec } = useInView();
   const { ref:sectFourth, inView:fourthSec } = useInView();
 
+
+  const close =()=>setModalOpen(false)
+  const open =()=>setModalOpen(true)
 
   const AnimateBox ={
     hidden:{
@@ -56,21 +63,25 @@ const FirstPage = () => {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laborum eveniet neque quis, sapiente labore minus ex! Modi molestias, cumque ut nemo laboriosam dicta quod, labore dignissimos mollitia earum illo?</p>
 
           </div>
+          <motion.button 
+          whileHover={{scale:1.1}}
+          whileTap={{scale:0.9}}
+          className='w-40 h-20 bg-violet-700 rounded-lg'
+          onClick={()=>(modalOpen? close():open())}
+          >
+            Click
+          </motion.button>
         </section>
        
-        <section ref={sectTwo}   className={`hidden1 ${secondSec ? 'show':null} bg-pink-300`}>
-        <div class="waves">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="shape-fill"></path>
-            </svg>
-        </div>
+        <section ref={sectTwo}   className={`hidden1 ${secondSec ? 'show':null} bg-pink-300 layer1  bg-no-repeat bg-top bg-cover`}>
+      
         <div className={` bg-black h-28 flex flex-col justify-center items-center p-2 rounded-lg`}>
               <h2>By my product</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi ducimus, iure autem vero nulla nam at sunt vel alias ut impedit, ad rerum omnis facere, voluptate quo. Est, reprehenderit?</p>
           </div>
              
         </section>
-        <section ref={sectThree} className={`hidden1 ${thirdSec ? 'show':null}  bg-green-300`}>
+        <section ref={sectThree} className={`hidden1  ${thirdSec ? 'show':null}  bg-green-300`}>
         <div className={` bg-black h-28 flex flex-col justify-center items-center p-2 rounded-lg`}>
               <h2>By my product</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi ducimus, iure autem vero nulla nam at sunt vel alias ut impedit, ad rerum omnis facere, voluptate quo. Est, reprehenderit?</p>
@@ -100,7 +111,7 @@ const FirstPage = () => {
 
         </section> 
    
-    
+        {modalOpen &&<Modal modalOpen={modalOpen} handleClose={close}/>}
     </motion.div>
   )
 }
