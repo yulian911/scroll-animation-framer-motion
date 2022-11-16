@@ -110,6 +110,18 @@ const FirstPage = () => {
                 </motion.div>
 
         </section> 
+        <section>
+          <div className='w-full h-full bg-[#eff0f4] flex justify-center items-center'>
+              <div className='drop'  >
+                  <div className='relative flex justify-center items-center flex-col text-center p-[40px] gap-[15px] text-black'>
+                    <h2 className='text-[#be01fe] font-bold'>01</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore omnis blanditiis hic quaerat, optio magni ratione officiis placeat animi temporibus, ut, maiores iste aut suscipit!</p>
+                    <a href='#' className='relative py-[10px] px-[25px] bg-[#be01fe] text-white rounded-[25px] font-medium opacity-[0.75] transition delay-75 hover:opacity-[1]' >Read More</a>
+                  </div>
+              </div>
+
+          </div>
+        </section>
    
         {modalOpen &&<Modal modalOpen={modalOpen} handleClose={close}/>}
     </motion.div>
