@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import FirstPage from './Pages/FirstPage'
 import SecondPage from './Pages/SecondPage'
 import ThirdPage from './Pages/ThirdPage'
+import FourPage from './Pages/FourPage'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
           <Route path='/' element={<FirstPage/>}/>
           <Route path='/SecondPage' element={<SecondPage/>}/>
           <Route path='/ThirdPage' element={<ThirdPage/>}/>
+          <Route path='/FourPage' element={<FourPage/>}/>
         </Routes>
       </AnimatePresence>
       
