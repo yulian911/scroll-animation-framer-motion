@@ -44,22 +44,24 @@ const FourPage = () => {
           >
             
         </motion.div>
-        <div className='imgBx'>
-            <img src={profile} className='absolute z-[1] top-[10px] left-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] grayscale-[1]'/>
-        </div>
-        <div className='content absolute w-[100%] h-[100%] flex justify-center items-end overflow-hidden'>
-            <div className="details">
-              <h2 >Aleonora Juźwiak <br/><span>Senior UX/UI Designer</span></h2>
-              <div className="data flex justify-between my-[20px] mx-0">
-                <h3>343<br/><span>Posts</span></h3>
-                <h3>120k<br/><span>Followers</span></h3>
-                <h3>285<br/><span>Following</span></h3>
+        <div className='absolute inset-1  flex  items-center justify-center bg-[#000]'>
+          <div className='imgBx'>
+              <img src={profile} className='absolute z-[1] top-[10px] left-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] grayscale-[1]'/>
+          </div>
+          <div className='content absolute w-[100%] h-[100%] flex justify-center items-end overflow-hidden'>
+              <div className="details">
+                <h2 >Aleonora Juźwiak <br/><span>Senior UX/UI Designer</span></h2>
+                <div className="data flex justify-between my-[20px] mx-0">
+                  <h3>343<br/><span>Posts</span></h3>
+                  <h3>120k<br/><span>Followers</span></h3>
+                  <h3>285<br/><span>Following</span></h3>
+                </div>
+                <div className="actionBtn flex justify-between">
+                  <button className='py-[10px] px-[30px] border-none outline-none rounded-[5px] text-[1em] font-medium bg-[#45f3ff] text-black cursor-pointer  opacity-90 hover:opacity-100'> Followe </button>
+                  <button className='py-[10px] px-[30px] border-none outline-none rounded-[5px] text-[1em] font-medium bg-white text-black cursor-pointer opacity-90 hover:opacity-100'> Message </button>
+                </div>
               </div>
-              <div className="actionBtn flex justify-between">
-                <button className='py-[10px] px-[30px] border-none outline-none rounded-[5px] text-[1em] font-medium bg-[#45f3ff] text-black cursor-pointer  opacity-90 hover:opacity-100'> Followe </button>
-                <button className='py-[10px] px-[30px] border-none outline-none rounded-[5px] text-[1em] font-medium bg-white text-black cursor-pointer opacity-90 hover:opacity-100'> Message </button>
-              </div>
-            </div>
+          </div>
         </div>
       </motion.div>
       
@@ -110,7 +112,7 @@ const FourPage = () => {
       <div className="inputBox relative flex w-[350px]">
         <input type ='text' required />
         <span>Full Name</span>
-        <div />
+        <div  className='i'/>
       </div>
     </div>
   </section>
