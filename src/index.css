@@ -373,3 +373,43 @@ transition: 0.2s;
 .cards .detailss .contents .social-icons a:hover{
   background: #e21212;
 }
+
+/* input  */
+
+.inputBox input {
+  position:relative;
+  padding: 8px 10px;
+  width: 100%;
+  border:none;
+  outline: none;
+  background:transparent;
+  color:#fff;
+  font-size:1.25em;
+  letter-spacing:0.05em;
+}
+
+.inputBox  span {
+  position:absolute;
+  left:0;
+  padding: 10px 0;
+  pointer-events: none;
+  font-size:1em;
+  transition: 0.5s;
+  color:#333;
+  letter-spacing: 0.05em;
+}
+
+.inputBox input:valid ~ span, 
+.inputBox input:focus ~ span{
+  font-size:0.85em ;
+  transform:translateY(-32px)
+} 
+absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition delay-75 z-[1] rounded-[4px] pointer-events-none
+.inputBox div {
+  position: absolute;
+  bottom: 0;
+}
+.inputBox input:valid ~ div, 
+.inputBox input:focus ~ div{
+ height: 100%;
+} 

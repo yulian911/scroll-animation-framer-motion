@@ -105,6 +105,15 @@ const FourPage = () => {
       </div>
     </div>
   </section>
+  <section className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+    <div className='relative p-[50px] bg-white flex justify-center items-center rounded-[8px] drop-shadow-[0,15px,35px] shadow-[rgba(0,0,0,0.25)]'>
+      <div className="inputBox relative flex w-[350px]">
+        <input type ='text' required />
+        <span>Full Name</span>
+        <div />
+      </div>
+    </div>
+  </section>
   </>
   )
 }
