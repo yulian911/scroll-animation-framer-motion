@@ -44,7 +44,7 @@ const FourPage = () => {
           >
             
         </motion.div>
-        <div className='absolute inset-1  flex  items-center justify-center bg-[#000]'>
+        {/* <div className='absolute inset-1  flex  items-center justify-center bg-[#000]'> */}
           <div className='imgBx'>
               <img src={profile} className='absolute z-[1] top-[10px] left-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] grayscale-[1]'/>
           </div>
@@ -62,7 +62,7 @@ const FourPage = () => {
                 </div>
               </div>
           </div>
-        </div>
+        {/* </div> */}
       </motion.div>
       
     </div>
