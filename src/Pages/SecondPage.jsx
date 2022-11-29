@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {motion} from 'framer-motion'
 
 const articles =[
@@ -13,9 +13,11 @@ const articles =[
 
 
 const SecondPage = () => {
+
+  const [isOpen,setIsOpen]=useState(false)
   return (
     <motion.div
-    className='bg-red-800 flex justify-center items-center min-h-[100vh]'
+    className='bg-red-800 flex justify-center items-center min-h-[100vh] flex-col'
     initial={{
       opacity:0,
       width:0
@@ -28,7 +30,7 @@ const SecondPage = () => {
       opacity:0,
       x:window.innerWidth,transition:{duration:0.1}
     }}
-    
+
     >
       <div className='  flex flex-wrap w-[600px] h-[600px] gap-6 justify-center items-center'>
         {articles.map((article,i)=>(
@@ -46,6 +48,36 @@ const SecondPage = () => {
             <p>{article.excerpt}</p>
           </motion.div>
         ))}
+      </div>
+      <div className='w-full flex justify-center items-center h-[100vh] bg-gradient-to-r from-[#2c5364] to-[#203a43]'>
+        <motion.div 
+          transition={{layout:{duration:1,type:"spring"}}}
+          layout
+          onClick={()=>setIsOpen(!isOpen)}
+          className='  bg-white py-[3rem] px-[4rem] text-black rounded-[15px]'>
+          <motion.h2 layout='position' className='font-bold'>Framer Motion 🚀</motion.h2>
+          {
+            isOpen ? (
+            <motion.div 
+              className='w-[20rem]' 
+              initial={{opacity:0}}
+              transition={{duration:1}}
+              animate={{opacity:1}}
+            
+            >
+                <p className='pt-[1rem] leading-[150%] '>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam omnis reiciendis voluptas totam, ipsum id ducimus modi explicabo molestias pariatur reprehenderit culpa et nisi dicta ut rerum minima temporibus quas?
+                </p>
+                <p className='pt-[1rem] leading-[150%] '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatem!</p>
+            </motion.div>
+
+            )
+            :
+            null
+          }
+        </motion.div>
+
+
       </div>
 
 
