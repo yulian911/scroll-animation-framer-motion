@@ -135,8 +135,8 @@ section{
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
-  width:100px;
-  height:400px;
+  width:600px;
+  height:100px;
   background:linear-gradient(#45f3ff,#ff3c7b);
   animation: animate 4s linear infinite ;
 }
