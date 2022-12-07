@@ -30,7 +30,7 @@ const SecondPage = () => {
     }}
     
     >
-      <div className='  flex flex-wrap w-[600px] h-[600px] gap-6 justify-center items-center'>
+      <div className='grid grid-cols-3 gap-4'>
         {articles.map((article,i)=>(
           <motion.div key={article.id} 
           className='w-40 h-40 bg-violet-800 rounded-lg flex flex-col justify-center items-center'
