@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        wave: {
+          '0%': { transform: 'translateX(100%)' },
+         
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },animation: {
+        'waving-hand': 'wave 10s linear infinite',
+      },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans]
       },

@@ -15,6 +15,9 @@ const BoxAnimation ={
 
 
 const FourPage = () => {
+  console.log('xd')
+  
+
   return (
   <>
     <section>
