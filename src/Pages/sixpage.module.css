@@ -14,7 +14,7 @@ overflow: hidden;
 .active {
   box-shadow: 0 0 0 4px #222, 0 0 0 12px #ff1d50;
 }
-/* .imgBx img {
+.imgBx img {
   position: absolute;
   top:0;
   left: 0;
@@ -22,4 +22,86 @@ overflow: hidden;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-} */
+  transition: .5s;
+  filter: grayscale(1);
+}
+.active img {
+  filter: grayscale(0);
+}
+.content{
+  position:absolute;
+  inset:0;
+  overflow:hidden ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content::before
+{
+  content: '';
+  position: absolute;
+  inset:60px;
+  border: 4px solid transparent;
+  border-left:4px solid #2196f3;
+  border-right:4px solid #fff;
+  border-radius: 50%;
+  animation:animate_01 5s linear infinite;
+}
+
+@keyframes animate_01 {
+  0%
+  {
+    rotate:0deg;
+  }
+  100%
+  {
+    rotate:360deg;
+  }
+  
+}
+
+.content::after
+{
+  content: '';
+  position: absolute;
+  inset:120px;
+  border: 4px solid transparent;
+  border-left:4px solid #ff1d50;
+  border-right:4px solid #fff;
+  border-radius: 50%;
+  animation:animate_02 2.5s linear infinite;
+}
+
+@keyframes animate_02 {
+  0%
+  {
+    rotate:360deg;
+  }
+  100%
+  {
+    rotate:0deg;
+  }
+  
+}
+
+.contentBx{
+  position:absolute;
+  transform: scale(0);
+  transition: 0.5s;
+  opacity:0;
+
+}
+.activeContent {
+  transform: scale(1);
+  opacity:1;
+  transition-delay: 0.5s;
+}
+.card{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap:15px
+
+}
