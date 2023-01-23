@@ -18,7 +18,6 @@ const data =[
 
 
 const SixPage = () => {
-  const [active,setActive] =React.useState(false)
   const [activeNum,setActiveNum] =React.useState(null)
 
   return (
