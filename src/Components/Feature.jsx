@@ -61,7 +61,7 @@ const Feature = () => {
     },
   };
   return (
-    <div className="bg-[#0c1727] pt-[5rem] pr-[5rem] pb-[20%] pl-[5rem]">
+    <div className="bg-[#0c1727] pt-[5rem] pr-[5rem] pb-[20%] pl-[5rem] relative">
       <motion.div ref={ref} animate={control} variants={list} className="flex items-center gap-[2rem]">
         <motion.div variants={item1} className="flex-1">
           <img src={feature} alt="" draggable={false} className="w-[80%]" />
