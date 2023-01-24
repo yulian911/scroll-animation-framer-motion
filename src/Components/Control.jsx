@@ -37,7 +37,7 @@ const Control = () => {
       initial="hidden"
       variants={variants}
       animate={control}
-      className="w-[70%] absolute bottom-[-40%] left-0 right-0 m-auto bg-white p-[5rem] rounded-[20px] shadow-lg"
+      className="w-[70%] absolute bottom-[-60%] left-0 right-0 m-auto bg-white p-[5rem] rounded-[20px] shadow-lg"
     >
       <div className="w-[100%] flex flex-col gap-[2rem] ">
         <div className="flex flex-col gap-[2rem] text-center">
@@ -50,16 +50,21 @@ const Control = () => {
             Start 14 days trial
           </button>
         </div>
-        <div className="control__content">
+        <div className=" grid-cols-[1fr,1fr,1fr] gap-[2rem]">
           {controls.map((control, index) => (
-            <div className="control" key={index}>
-              <div className="control__icon">
+            <div
+              className="bg-[#0c1727] m-5 p-[2rem] rounded-[20px] flex items-center justify-center gap-[2rem] flex-col text-white "
+              key={index}
+            >
+              <div className="w-[30px] h-[30px] bg-[#3ab7fd] shadow-lg flex items-center justify-center rounded-[50%]">
                 <control.icon />
               </div>
 
-              <div className="control__text__content">
-                <p>{control.name}</p>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, quos.</span>
+              <div className="flex items-center flex-col text-center  ">
+                <p className="font-bold">{control.name}</p>
+                <span className="text-[#818890]">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, quos.
+                </span>
               </div>
             </div>
           ))}

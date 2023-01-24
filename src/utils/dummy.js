@@ -1,6 +1,25 @@
 import { AiOutlineClockCircle, AiFillCloud } from 'react-icons/ai';
 import { SiGooglepodcasts } from 'react-icons/si';
 
+export const routes = [
+  {
+    name: 'Home',
+    path: '#',
+  },
+  {
+    name: 'How it works',
+    path: '#how',
+  },
+  {
+    name: 'About Us',
+    path: '#about',
+  },
+  {
+    name: 'Contact Us',
+    path: '#contact',
+  },
+];
+
 export const analytics = [
   {
     name: 'Active users',
@@ -32,3 +51,5 @@ export const controls = [
     icon: AiOutlineClockCircle,
   },
 ];
+
+// https://github1s.com/zenith-noble01/youtube
