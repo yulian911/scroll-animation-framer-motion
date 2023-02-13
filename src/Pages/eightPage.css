@@ -1,0 +1,103 @@
+.containerBox {
+  @apply bg-[#152533] flex justify-center items-center min-h-[calc(100vh-45px)] text-black;
+}
+.cardBox {
+  @apply relative h-[100px];
+
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.cardBox.active {
+  height: 450px;
+}
+
+.userBox {
+  @apply relative w-[400px] min-h-[150px] bg-[#2196f3] flex justify-center items-center p-[60px,40px,30px] flex-col gap-[10px] rounded-[10px];
+}
+
+.boxImg {
+  @apply absolute top-0 w-[100px] h-[100px] rounded-[50%] overflow-hidden border-white border-[6px];
+
+  transform: translateY(-50%);
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.imageBox {
+  @apply absolute w-[100%] h-[100%] object-cover z-0;
+}
+
+.content {
+  @apply relative text-center;
+}
+.content h2 {
+  @apply text-[1.2em] text-white;
+  line-height: 1.05em;
+  font-weight: 600;
+}
+
+.content h2 span {
+  font-size: 0.75em;
+  font-weight: 400;
+}
+
+.toggle {
+  @apply absolute bottom-0 w-[120px] p-[5px,15px] bg-white cursor-pointer font-[500] rounded-[30px] text-center;
+
+  transform: translateY(50%);
+  border: 5px solid #152533;
+  transition: 0.5s;
+}
+.toggle.active {
+  background-color: #ff4383;
+}
+.toggle::before {
+  content: 'Hire me';
+}
+
+.cardBox.active .toggle::before {
+  content: 'Close';
+}
+.contact {
+  @apply relative top-[30px] w-[100%] h-0 overflow-hidden flex flex-col gap-[10px];
+  transition: 0.5s;
+}
+.cardBox.active .contact {
+  height: 325px;
+  /* transition-duration: 0.5s; */
+}
+
+.contact li {
+  @apply w-[100%] min-h-[100px] bg-white rounded-[10px] flex opacity-0;
+  transition: 0.5s;
+  transform: scale(0);
+  padding: 10px 30px;
+}
+
+.cardBox.active .contact li {
+  opacity: 1;
+  transform: scale(1);
+}
+.cardBox.active .contact:hover li {
+  opacity: 0.15;
+  filter: blur(2px);
+  transition-delay: 0s;
+}
+.cardBox.active .contact li:hover {
+  opacity: 1;
+  filter: blur(0px);
+}
+.contact li a {
+  @apply flex  items-center gap-[10px];
+}
+.contact li a .iconBox {
+  @apply relative w-[60px] h-[60px] rounded-[50%] flex justify-center items-center;
+}
+.contact li a p {
+  color: #666;
+  font-size: 1.1em;
+}
+.contact li a:hover {
+  color: #111;
+}
