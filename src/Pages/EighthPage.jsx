@@ -11,7 +11,22 @@ const data = [
 
 const EighthPage = () => {
   const [active, setActive] = useState(false);
-  console.log(active);
+  const [hh, setHH] = useState(new Date().getHours());
+  const [ss, setSS] = useState(new Date().getSeconds());
+  const [mm, setMM] = useState(new Date().getMinutes());
+
+  let m = new Date().getMinutes();
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setSS(new Date().getSeconds());
+      setHH(new Date().getHours());
+      setMM(new Date().getMinutes());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [hh]);
+
+  console.log(510 - (510 * hh) / 60);
   return (
     <div className="containerBox">
       <div className={`cardBox ${active ? 'active' : ''}`}>
@@ -40,6 +55,32 @@ const EighthPage = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="overflow-hidden w-[300px] h-[300px] p-3">
+        <div id="time">
+          <div className="circle stroke-[#ff2972]">
+            <div className="dots before:bg-[#ff2972]" style={{ transform: `rotateZ(${ss * 6}deg)` }}></div>
+            <svg>
+              <circle cx="120" cy="120" r="120" style={{ strokeDashoffset: 760 - (760 * ss) / 60 }} />
+            </svg>
+          </div>
+
+          <div className="circle  stroke-[#fee800]">
+            <div className="dots min_dot before:bg-[#fee800]"></div>
+            <svg>
+              <g rotate={-90} origin="100">
+                <circle cx="100" cy="100" r="100" style={{ strokeDashoffset: 630 - (630 * m) / 60 }} />
+              </g>
+            </svg>
+          </div>
+
+          <div className="circle stroke-[#04fc43]">
+            <div className="dots sec_dot before:bg-[#04fc43] "></div>
+            <svg>
+              <circle cx="80" cy="80" r="80" style={{ strokeDashoffset: 510 - (510 * hh) / 60 }} />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   );
