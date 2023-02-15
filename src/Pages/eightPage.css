@@ -168,3 +168,58 @@
   height: 15px;
   border-radius: 50%;
 }
+
+.timeBx {
+  @apply absolute inset-0 flex justify-center items-center w-full text-white gap-[15px] text-[1.5em] font-bold;
+  font-family: consolas;
+}
+
+.timeBx .hours::after,
+.timeBx .minutes::after {
+  content: ':';
+  position: absolute;
+}
+.ap {
+  position: absolute;
+  transform: translateY(-15px);
+  font-size: 0.5em;
+  right: 56px;
+}
+
+/* BTN  */
+.btN {
+  @apply relative  text-[1.05em] rounded-[40px] bg-[#2f2f2f] text-[#bbb];
+  padding: 14px 40px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  user-select: none;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.btN:hover {
+  color: white;
+}
+.btN span {
+  position: absolute;
+  left: var(--xb);
+  top: var(--yb);
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  filter: brightness(2);
+  animation: animated 2s linear 2;
+}
+
+@keyframes animated {
+  0% {
+    width: 0;
+    height: 0;
+    border: 5px solid var(--crl);
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    border: 5px solid var(--crl);
+  }
+}

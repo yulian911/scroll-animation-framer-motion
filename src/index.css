@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --crl: var(--crl);
+  --yb: var(--yb);
+  --xb: var(--xb);
+}
+
 body {
   margin: 0;
   padding: 0;
