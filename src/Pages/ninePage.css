@@ -1,0 +1,64 @@
+.navigations {
+  @apply absolute bottom-[30px] flex gap-[30px];
+}
+.navigations li {
+  @apply relative;
+}
+
+.navigations li a {
+  @apply flex justify-center items-center w-[80px] h-[80px] bg-[white] rounded-[50%] text-[1.5em];
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.navigations li.active a,
+.navigations li.active a:hover {
+  @apply bg-[#f00] text-white;
+}
+.navigations li a:hover {
+  color: red;
+}
+.navigations li a svg {
+  /* fill: black; */
+}
+.imgScroll {
+  @apply absolute left-0 p-[60px,0] w-full flex;
+  overflow-x: hidden;
+}
+
+.imgScroll div {
+  @apply flex;
+  animation: animateCarousel 40s linear infinite;
+  animation-delay: -40px;
+}
+.imgScroll:hover div {
+  animation-play-state: paused;
+}
+
+@keyframes animateCarousel {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.imgScroll div img {
+  margin: 0 25px;
+  max-width: 300px;
+  border: 10px solid transparent;
+  transition: 0.25s;
+}
+
+.imgScroll div img:hover {
+  border: 10px solid #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.imgScroll:hover div img {
+  opacity: 0.05;
+  filter: blur(3px);
+}
+.imgScroll:hover div img:hover {
+  opacity: 1;
+  filter: blur(0);
+}
