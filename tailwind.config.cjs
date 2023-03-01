@@ -14,10 +14,16 @@ module.exports = {
           '0%': { transform: 'translateY(0px)' },
           '100%': { transform: 'translateY(-850px) rotate(360deg)' },
         },
+        rgb: {
+          // '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: 'center' },
+          // '100%': { backgroundPosition: '0% 50%' },
+        },
       },
       animation: {
         'waving-hand': 'wave 10s linear infinite',
         fluids: 'spin 5s linear infinite',
+        rgb: 'rgb 6s linear infinite',
       },
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans],

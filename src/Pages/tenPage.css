@@ -1,37 +1,257 @@
-.navigation_nav {
-  @apply w-[350px] h-[70px] bg-white flex justify-center items-center rounded-[10px];
+.divBlock {
+  background-color: red;
+  width: 33.3%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navigation_nav ul {
-  @apply flex w-[300px];
+.divBlock:has(h1) {
+  background-color: aqua;
 }
-.navigation_nav ul li {
-  @apply relative w-[70px] h-[70px];
-  z-index: 1;
+.divBlock:has(p) {
+  background-color: red;
+}
+.divBlock:has(.fance) {
+  background-color: purple;
 }
 
-.navigation_nav ul li a {
-  @apply relative flex justify-center items-center flex-col w-full text-center font-[500]  h-[70px];
+.containerTen {
+  width: 70%;
+  height: 70%;
+  /* background-color: yellowgreen; */
+
+  /* background-color: white; */
+  /* border-radius: 10px; */
+  color: white;
 }
-.navigation_nav ul li a .icon_nav {
-  @apply relative;
-  display: block;
-  line-height: 75px;
-  font-size: 1.5em;
-  text-align: center;
-  transition: 0.5s;
+.containerTen .inner {
+  background-color: aqua;
+  padding: 1em;
+  /* display: flex;
+  flex-direction: column; */
+  border-radius: 10px;
+  width: 100%;
+  clip-path: circle(4% at 95% 50%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+/* 10% jaka wartosc tego at 0%  0%; JEJ MIEJSCE  */
+.containerTen .inner:hover {
+  clip-path: circle(75%);
+  background-color: blue;
+}
+.containerTen .inner span {
+  /* float: right; */
+  width: 100%;
+  height: 30%;
+  display: flex;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  transition: color 0.5s;
+  position: relative;
+  margin-right: 4%;
+}
+.containerTen .inner span svg {
+  position: absolute;
+  font-size: 36px;
   color: black;
+  top: 3px;
+  right: 33px;
+}
+.containerTen .inner:hover span svg {
+  color: blue;
+}
+.containerTen .inner h1 {
+  margin: 0;
+}
+.containerTen .inner p {
+  font-size: 0.8rem;
 }
 
-.navigation_nav ul li:hover a .icon_nav {
-  transform: translateY(-35px);
+.containerNext {
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 10px;
+  color: white;
 }
-.navigation_nav ul li a .text_nav {
-  @apply absolute text-black font-[400] text-[0.75em];
-  letter-spacing: 0.05em;
-  opacity: 0;
-  transition: 0.5s;
-  transform: translateY(20px);
+
+.containerNext .inner {
+  background-color: aqua;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  clip-path: inset(0% 0% 0% 100%);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
-.navigation_nav ul li:hover a .text_nav {
-  opacity: 1;
+
+.containerNext .inner h1 {
+  font-size: 2rem;
+}
+.containerNext .inner p {
+  font-size: 1rem;
+}
+
+.containerNext:hover .inner {
+  clip-path: inset(0% 0% 0% 0%);
+}
+/* card  */
+
+.cardOne {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: 'image' 'text' 'stats';
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  color: black;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.cardOne .card-image {
+  grid-area: image;
+  background: url('./../assets/1.jpg');
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.cardOne .card-text {
+  grid-area: text;
+  margin: 25px;
+}
+.cardOne .card-text .date {
+  color: rgb(255, 7, 110);
+  font-size: 13px;
+}
+.cardOne.card-text p {
+  color: grey;
+  font-size: 15px;
+  font-weight: 300;
+}
+.cardOne.card-text h2 {
+  margin-top: 0px;
+  font-size: 28px;
+}
+.cardOne .card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(255, 7, 110);
+}
+.cardOne .card-stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+.cardOne .card-stats .type {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.cardOne .card-stats .value {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.cardOne .card-stats .border {
+  border-bottom: 0px;
+  border-top: 0px;
+  border-left: 1px solid rgb(172, 26, 87);
+  border-right: 1px solid rgb(172, 26, 87);
+}
+.cardOne .card-stats .value sup {
+  font-size: 12px;
+}
+.cardOne:hover {
+  transform: scale(1.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* next card  */
+
+.cardNext {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 20px;
+  grid-template-areas: 'image' 'text' 'stats';
+  font-family: roboto;
+  border-radius: 18px;
+  background: #1d1d1d;
+  color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: justify;
+  /* transition: 0.5s ease; */
+  cursor: pointer;
+  /* z-index: 10000; */
+}
+
+.cardNext .card-image {
+  grid-area: image;
+  background: linear-gradient(#fff0 0%, #fff0 70%, #1d1d1d 100%), url('./../assets/1.jpg');
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
+}
+.cardNext .card-text {
+  grid-area: text;
+  margin: 25px;
+}
+.cardNext .card-text .date {
+  color: rgb(255, 7, 110);
+  font-size: 13px;
+}
+.cardNext .card-text p {
+  color: grey;
+  font-size: 14px;
+  font-weight: 300;
+}
+.cardNext .card-text h2 {
+  margin-top: 0px;
+  font-size: 28px;
+}
+
+.rgb::after {
+  content: '';
+  background: linear-gradient(
+        45deg,
+        #ff0000 0%,
+        #ff9a00 10%,
+        #d0de21 20%,
+        #4fdc4a 30%,
+        #3fdad8 40%,
+        #2fdad8 50%,
+        #1c7fee 60%,
+        #5f15f2 70%,
+        #ba0cf8 80%,
+        #fb07d9,
+        90%,
+        #ff0000 100%
+      )
+      repeat 0%,
+    0% /300% 100%;
+  position: absolute;
+  inset: -3px;
+  border-radius: 16px;
+  filter: blur(8px);
+  z-index: -1;
+  @apply animate-pulse;
 }
