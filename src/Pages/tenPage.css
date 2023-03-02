@@ -255,3 +255,95 @@
   z-index: -1;
   @apply animate-pulse;
 }
+
+.modalButton {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px 35px;
+  background: #ffff;
+  color: black;
+  letter-spacing: 0.05em;
+  margin-top: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  transition: 0.5s;
+}
+.modalButton:hover {
+  letter-spacing: 0.2em;
+}
+.scan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scan .fingerprint {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  background: url('./../assets/fingerPrint_01.png');
+  background-size: 300px;
+}
+
+.scan .fingerprint::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./../assets/fingerPrint_02.png');
+  background-size: 300px;
+  animation: animateFinger 4s ease-in-out infinite;
+}
+@keyframes animateFinger {
+  0%,
+  100% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.scan .fingerprint::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #3fdad8;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 20px #3fdad8), drop-shadow(0 0 60px #3fdad8);
+  animation: animateFingerAfter 4s ease-in-out infinite;
+}
+@keyframes animateFingerAfter {
+  0%,
+  100% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+}
+.scan h3 {
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  color: #3fefef;
+  filter: drop-shadow(0 0 20px #3fdad8), drop-shadow(0 0 60px #3fdad8);
+  animation: animate_text 0.5s steps(1) infinite;
+}
+@keyframes animate_text {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

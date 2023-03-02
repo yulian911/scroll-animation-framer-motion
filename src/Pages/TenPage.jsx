@@ -1,4 +1,7 @@
 import React from 'react';
+import { useRef } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { AiOutlineHome, AiOutlineInfoCircle } from 'react-icons/ai';
 import { GrContactInfo, GrGallery } from 'react-icons/gr';
 import { SiSkillshare } from 'react-icons/si';
@@ -12,6 +15,21 @@ const data = [
 ];
 
 const TenPage = () => {
+  const [isOpened, setIsOpened] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (isOpened) {
+      ref.current?.showModal();
+      document.body.classList.add('modal-open'); // prevent bg scroll
+    } else {
+      ref.current?.close();
+      document.body.classList.remove('modal-open');
+    }
+  }, [isOpened]);
+
+  const preventAutoClose = () => e.stopPropagation();
+
   return (
     <div>
       <section className="h-[calc(100vh-45px)]">
@@ -20,10 +38,21 @@ const TenPage = () => {
             <span>
               <AiOutlineInfoCircle />
             </span>
-            <h1>Hey</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem </p>
+            <button onClick={() => setIsOpened(true)} className="modalButton">
+              Open Modal
+            </button>
           </div>
         </div>
+        <dialog ref={ref} onCancel={() => setIsOpened(false)} onClick={() => setIsOpened(false)}>
+          <div onClick={preventAutoClose}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ut dolore officia, rerum nemo quam,
+              ullam veritatis obcaecati fugiat reprehenderit dolor, quisquam id provident molestiae impedit delectus.
+              Distinctio, recusandae ducimus!
+            </p>
+            <button onClick={() => setIsOpened(false)}>Close Modal</button>
+          </div>
+        </dialog>
         <div className="containerNext">
           <div className="inner">
             <h1>Hey</h1>
@@ -74,6 +103,12 @@ const TenPage = () => {
               architecto delectus unde voluptatibus necessitatibus esse est.
             </p>
           </div>
+        </div>
+      </section>
+      <section className="h-[calc(100vh-45px)]">
+        <div className="scan">
+          <div className="fingerprint"></div>
+          <h3>Scanning...</h3>
         </div>
       </section>
     </div>
