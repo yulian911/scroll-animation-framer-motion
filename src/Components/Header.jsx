@@ -16,6 +16,7 @@ const Header = () => {
           'EighthPage',
           'NinePage',
           'TenPage',
+          'ElevenPage',
         ].map((el, i) => (
           // <button className='cursor-pointer'>
           <Link key={i} to={`/${i === 0 ? '' : el}`}>

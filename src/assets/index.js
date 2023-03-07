@@ -47,3 +47,9 @@ export { default as Nice } from './nice.png';
 export { default as Nba } from './nba.png';
 export { default as Adidas } from './adidas.png';
 export { default as NB } from './pobrane.png';
+
+// background
+export { default as moon } from './moon.png';
+export { default as mountains01 } from './mountains01.png';
+export { default as mountains02 } from './mountains02.png';
+export { default as road } from './road.png';

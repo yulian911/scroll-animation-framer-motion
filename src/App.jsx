@@ -12,6 +12,7 @@ import SevenPage from './Pages/SevenPage';
 import EighthPage from './Pages/EighthPage';
 import NinePage from './Pages/ninePage';
 import TenPage from './Pages/TenPage';
+import Eleven from './Pages/Eleven';
 
 function App() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function App() {
           <Route path="/EighthPage" element={<EighthPage />} />
           <Route path="/NinePage" element={<NinePage />} />
           <Route path="/TenPage" element={<TenPage />} />
+          <Route path="/ElevenPage" element={<Eleven />} />
         </Routes>
       </AnimatePresence>
     </div>
