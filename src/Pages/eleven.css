@@ -10,26 +10,36 @@
 }
 .elevenContainer .containerEleven {
   position: absolute;
-  left: -10%;
-  width: 120%;
+  /* left: -10%; */
+  width: 110%;
   height: 100vh;
   background: url('./../assets/bg.jpg');
-  /* background-size: 100%; */
+  background-size: cover;
 }
-.elevenContainer .containerEleven #scene .layer {
+.layer {
   position: absolute;
+  width: 120%;
+  height: 107%;
   inset: 0;
 }
-.elevenContainer .containerEleven #scene .layer img {
+.layer img {
   position: absolute;
   bottom: 0;
+  left: -20px;
+  width: 110%;
+  height: 105%;
+  object-fit: cover;
+}
+.parallaxItem {
+  position: absolute;
+  top: -10px;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .loginEleven {
-  position: relative;
+  position: absolute;
   padding: 60px;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(25px);
